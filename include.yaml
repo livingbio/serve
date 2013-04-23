@@ -1,0 +1,3 @@
+handlers:
+- url: /serve(/.*)?
+  script: serve.main.app
