@@ -1,3 +1,4 @@
+# -*- coding: utf8 -*-
 import webapp2
 from google.appengine.ext import blobstore
 from google.appengine.api import images
@@ -12,12 +13,12 @@ class ServeHandler(blobstore_handlers.BlobstoreDownloadHandler):
         self.send_blob(blob_info)
 
 
-upload_form = """
+upload_form = u"""
 <html>
     <body>
         <form action="%s" method="POST" enctype="multipart/form-data">
-        Upload File: <input type="file" name="file"><br>
-        <input type="submit" name="submit" value="submit">
+        上傳檔案: <input type="file" name="file"><br>
+        <input type="submit" name="submit" value="上傳">
         </form>
     </body>
 </html>"""
