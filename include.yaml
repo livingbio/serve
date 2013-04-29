@@ -1,3 +1,10 @@
 handlers:
 - url: /serve(/.*)?
   script: serve.main.app
+
+admin_console:
+  pages:
+  - name: Upload Image
+    url: /serve/add_image
+  - name: Upload File
+    url: /serve/add_file
