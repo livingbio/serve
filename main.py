@@ -4,9 +4,11 @@ from google.appengine.ext import blobstore
 from google.appengine.api import images
 from google.appengine.ext.webapp import blobstore_handlers
 import urllib
-
+from share_libs import static
+from datetime import timedelta
 
 class ServeHandler(blobstore_handlers.BlobstoreDownloadHandler):
+    @static.expires(expire_interval=timedelta(days=30))
     def get(self, resource):
         resource = str(urllib.unquote(resource))
         blob_info = blobstore.BlobInfo.get(resource)
